@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>BRAINRUSH | Signup</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background: #ffffff;
+
+        font-family: "Outfit", sans-serif;
+      }
+
+      .auth-section {
+        min-height: 100vh;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 60px 20px;
+      }
+
+      .auth-card {
+        width: 100%;
+
+        max-width: 480px;
+
+        background: #fff;
+
+        border: 1px solid #eee;
+
+        border-radius: 30px;
+
+        padding: 50px;
+
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+      }
+
+      .auth-logo {
+        text-align: center;
+
+        margin-bottom: 20px;
+      }
+
+      .auth-logo h1 {
+        font-family: "Oswald", sans-serif;
+
+        font-size: 3rem;
+
+        color: #e10600;
+
+        margin-bottom: 10px;
+      }
+
+      .auth-logo p {
+        color: #666;
+
+        line-height: 1.7;
+      }
+
+      .input-group {
+        margin-bottom: 22px;
+      }
+
+      .input-group label {
+        display: block;
+
+        margin-bottom: 10px;
+
+        font-weight: 600;
+
+        color: #111;
+      }
+
+      .input-group input {
+        width: 100%;
+
+        padding: 16px;
+
+        border-radius: 16px;
+
+        border: 1px solid #ddd;
+
+        font-family: "Outfit", sans-serif;
+
+        font-size: 15px;
+
+        outline: none;
+
+        transition: 0.3s;
+
+        box-sizing: border-box;
+      }
+
+      .input-group input:focus {
+        border-color: #e10600;
+      }
+
+      .signup-btn {
+        width: 100%;
+
+        border: none;
+
+        background: #e10600;
+
+        color: #fff;
+
+        padding: 16px;
+
+        border-radius: 50px;
+
+        font-size: 16px;
+
+        font-weight: 600;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+      }
+
+      .signup-btn:hover {
+        background: #111;
+      }
+
+      .auth-footer {
+        text-align: center;
+
+        margin-top: 25px;
+
+        color: #666;
+      }
+
+      .auth-footer a {
+        color: #e10600;
+
+        text-decoration: none;
+
+        font-weight: 600;
+      }
+
+      .message {
+        margin-top: 18px;
+
+        text-align: center;
+
+        font-size: 14px;
+
+        font-weight: 500;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="auth-section">
+      <div class="auth-card">
+        <div class="auth-logo">
+          <h1>BRAINRUSH</h1>
+
+          <p>Create your account and fuel your performance journey.</p>
+        </div>
+
+        <form id="signupForm">
+          <div class="input-group">
+            <label> Full Name </label>
+
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label> Email Address </label>
+
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label> Phone Number </label>
+
+            <input
+              type="text"
+              id="phone"
+              placeholder="Enter your phone number"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label> Password </label>
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Create password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="signup-btn">Create Account</button>
+
+          <div class="message" id="message"></div>
+        </form>
+
+        <div class="auth-footer">
+          Already have an account?
+
+          <a href="login.html"> Login </a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const signupForm = document.getElementById("signupForm");
+
+      signupForm.addEventListener(
+        "submit",
+
+        async (e) => {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+
+          const email = document.getElementById("email").value;
+
+          const phone = document.getElementById("phone").value;
+
+          const password = document.getElementById("password").value;
+
+          const message = document.getElementById("message");
+
+          try {
+            const response = await fetch(
+              "http://localhost:5000/api/auth/signup",
+
+              {
+                method: "POST",
+
+                headers: {
+                  "Content-Type": "application/json",
+                },
+
+                body: JSON.stringify({
+                  name,
+
+                  email,
+
+                  phone,
+
+                  password,
+                }),
+              },
+            );
+
+            const data = await response.json();
+
+            if (response.ok) {
+              message.style.color = "#00a651";
+
+              message.innerText = "Signup Successful";
+
+              signupForm.reset();
+
+              setTimeout(() => {
+                window.location.href = "login.html";
+              }, 1500);
+            } else {
+              message.style.color = "#e10600";
+
+              message.innerText = data.message;
+            }
+          } catch (err) {
+            message.style.color = "#e10600";
+
+            message.innerText = "Something went wrong";
+          }
+        },
+      );
+    </script>
+  </body>
+</html>

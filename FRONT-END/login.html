@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>BRAINRUSH | Login</title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #f5f5f5;
+
+        font-family: "Outfit", sans-serif;
+      }
+
+      .login-section {
+        width: 100%;
+
+        min-height: 100vh;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 30px;
+      }
+
+      .login-card {
+        width: 100%;
+
+        max-width: 500px;
+
+        background: #fff;
+
+        border-radius: 30px;
+
+        padding: 50px;
+
+        border: 1px solid #eee;
+
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      .logo-box {
+        text-align: center;
+
+        margin-bottom: 35px;
+      }
+
+      .logo-box h1 {
+        font-size: 3rem;
+
+        color: #e10600;
+
+        font-family: "Oswald", sans-serif;
+
+        margin-bottom: 10px;
+      }
+
+      .logo-box p {
+        color: #666;
+
+        line-height: 1.7;
+      }
+
+      .login-tabs {
+        display: flex;
+
+        background: #f3f3f3;
+
+        padding: 5px;
+
+        border-radius: 50px;
+
+        margin-bottom: 35px;
+      }
+
+      .tab-btn {
+        flex: 1;
+
+        border: none;
+
+        background: transparent;
+
+        padding: 14px;
+
+        border-radius: 50px;
+
+        cursor: pointer;
+
+        font-size: 15px;
+
+        font-weight: 600;
+
+        transition: 0.3s;
+      }
+
+      .tab-btn.active {
+        background: #e10600;
+
+        color: #fff;
+      }
+
+      .input-group {
+        margin-bottom: 22px;
+      }
+
+      .input-group label {
+        display: block;
+
+        margin-bottom: 10px;
+
+        font-weight: 600;
+
+        color: #111;
+      }
+
+      .input-group input {
+        width: 100%;
+
+        padding: 16px;
+
+        border-radius: 16px;
+
+        border: 1px solid #ddd;
+
+        outline: none;
+
+        font-size: 15px;
+
+        transition: 0.3s;
+
+        font-family: "Outfit", sans-serif;
+      }
+
+      .input-group input:focus {
+        border-color: #e10600;
+      }
+
+      .login-btn {
+        width: 100%;
+
+        border: none;
+
+        background: #e10600;
+
+        color: #fff;
+
+        padding: 16px;
+
+        border-radius: 50px;
+
+        font-size: 16px;
+
+        font-weight: 700;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+      }
+
+      .login-btn:hover {
+        background: #111;
+      }
+
+      .message {
+        margin-top: 18px;
+
+        text-align: center;
+
+        font-weight: 500;
+      }
+
+      .signup-link {
+        text-align: center;
+
+        margin-top: 25px;
+
+        color: #666;
+      }
+
+      .signup-link a {
+        color: #e10600;
+
+        text-decoration: none;
+
+        font-weight: 600;
+      }
+
+      @media (max-width: 600px) {
+        .login-card {
+          padding: 35px 25px;
+        }
+
+        .logo-box h1 {
+          font-size: 2.4rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="login-section">
+      <div class="login-card">
+        <!-- LOGO -->
+
+        <div class="logo-box">
+          <h1>BRAINRUSH</h1>
+
+          <p id="loginDescription">Login to continue your fitness journey.</p>
+        </div>
+
+        <!-- LOGIN TYPE -->
+
+        <div class="login-tabs">
+          <button class="tab-btn active" id="userTab">User Login</button>
+
+          <button class="tab-btn" id="adminTab">Admin Login</button>
+        </div>
+
+        <!-- FORM -->
+
+        <form id="loginForm">
+          <!-- EMAIL -->
+
+          <div class="input-group">
+            <label>Email Address</label>
+
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <!-- PASSWORD -->
+
+          <div class="input-group">
+            <label>Password</label>
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter password"
+              required
+            />
+          </div>
+
+          <!-- BUTTON -->
+
+          <button type="submit" class="login-btn">Login</button>
+
+          <!-- MESSAGE -->
+
+          <div class="message" id="message"></div>
+        </form>
+
+        <!-- SIGNUP -->
+
+        <div class="signup-link" id="signupBox">
+          Don’t have an account?
+
+          <a href="signup.html"> Signup </a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let loginType = "user";
+
+      const userTab = document.getElementById("userTab");
+
+      const adminTab = document.getElementById("adminTab");
+
+      const signupBox = document.getElementById("signupBox");
+
+      const loginDescription = document.getElementById("loginDescription");
+
+      /* ========================= */
+      /* USER TAB */
+      /* ========================= */
+
+      userTab.addEventListener("click", () => {
+        loginType = "user";
+
+        userTab.classList.add("active");
+
+        adminTab.classList.remove("active");
+
+        signupBox.style.display = "block";
+
+        loginDescription.innerText = "Login to continue your fitness journey.";
+      });
+
+      /* ========================= */
+      /* ADMIN TAB */
+      /* ========================= */
+
+      adminTab.addEventListener("click", () => {
+        loginType = "admin";
+
+        adminTab.classList.add("active");
+
+        userTab.classList.remove("active");
+
+        signupBox.style.display = "none";
+
+        loginDescription.innerText = "Secure admin dashboard access.";
+      });
+
+      /* ========================= */
+      /* LOGIN FORM */
+      /* ========================= */
+
+      const loginForm = document.getElementById("loginForm");
+
+      loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value;
+
+        const password = document.getElementById("password").value;
+
+        const message = document.getElementById("message");
+
+        try {
+          const response = await fetch(
+            "http://localhost:5000/api/auth/login",
+
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type": "application/json",
+              },
+
+              body: JSON.stringify({
+                email,
+                password,
+              }),
+            },
+          );
+
+          const data = await response.json();
+
+          if (response.ok) {
+            console.log(data);
+            /* SAVE USER */
+
+            localStorage.setItem(
+              "brainrushUser",
+
+              JSON.stringify({
+                id: data.user.id,
+
+                name: data.user.name,
+
+                email: data.user.email,
+
+                phone: data.user.phone,
+
+                role: data.user.role,
+              }),
+            );
+
+            /* SAVE TOKEN */
+
+            localStorage.setItem(
+              "token",
+
+              data.token,
+            );
+            localStorage.setItem("user", JSON.stringify(data.user));
+
+            console.log("USER SAVED", localStorage.getItem("brainrushUser"));
+
+            message.style.color = "#00a651";
+
+            message.innerText = "Login successful";
+
+            setTimeout(() => {
+              if (data.user.role === "admin") {
+                window.location.href = "admin.html";
+              } else {
+                window.location.href = "index.html";
+              }
+            }, 1000);
+          } else {
+            message.style.color = "#e10600";
+
+            message.innerText = data.message;
+          }
+        } catch (err) {
+          message.style.color = "#e10600";
+
+          message.innerText = "Something went wrong";
+        }
+      });
+    </script>
+  </body>
+</html>

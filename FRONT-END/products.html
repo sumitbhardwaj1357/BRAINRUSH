@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BRAINRUSH Products</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- GOOGLE FONTS -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- NAVBAR -->
+<!-- ========================= -->
+
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="index.html" class="logo">
+
+            <img src="logo.png.jpeg" alt="logo">
+
+            <span></span>
+
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="products.html" class="active-link">Products</a>
+
+            <a href="about.html">About</a>
+
+            <a href="orders.html">My Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+        <button class="cart-btn" id="cartBtn">
+
+            Cart
+
+            <span id="cartCount">0</span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+
+
+
+<!-- ========================= -->
+<!-- PRODUCTS HERO -->
+<!-- ========================= -->
+
+<section class="page-hero">
+
+    <div class="container">
+
+        <p class="hero-tag">
+            PREMIUM SUPPLEMENTS
+        </p>
+
+        <h1>
+            PRODUCTS
+        </h1>
+
+        <p class="page-subtext">
+
+            Fuel your body with high-performance supplements
+            designed for serious athletes and gym enthusiasts.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ========================= -->
+<!-- FILTERS -->
+<!-- ========================= -->
+
+<section class="product-filters">
+  <div class="container filters-container">
+    <p class="filter-label">Our Products</p>
+    
+    <!-- ========================= 
+    <button class="filter-btn active-filter">All</button>
+    <button class="filter-btn">Protein</button>
+    <button class="filter-btn">Pre-Workout</button>
+    <button class="filter-btn">Creatine</button>
+    <button class="filter-btn">Vitamins</button>
+  </div>
+   ========================= -->
+
+</section>
+
+
+<!-- ========================= -->
+<!-- PRODUCTS GRID -->
+<!-- ========================= -->
+
+<section class="products-page">
+
+    <div class="container">
+
+        <div class="products-grid" id="productsGrid">
+
+
+
+
+            <!-- PRODUCT CARD -->
+
+            <div class="product-card" data-category="pre-workout">
+
+                <div class="product-badge">
+                    BESTSELLER
+                </div>
+
+                <div class="discount-badge">
+                    38% OFF
+                </div>
+
+                <div class="product-image-box">
+
+                    <img src="assets/PRODUCT 1.jpg" alt="product">
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        PRE-WORKOUT
+                    </p>
+
+                    <h2>
+                        BRAINRUSH PRE-WORKOUT
+                    </h2>
+
+                    <p class="product-description">
+
+                        Explosive energy, insane focus and unmatched endurance.
+                        Train harder and push beyond your limits.
+
+                    </p>
+
+
+
+
+
+                    <!-- FLAVOR OPTIONS -->
+
+                    <div class="flavor-options">
+
+                        <button class="flavor-btn active-flavor">
+                            Mix Fruit
+                        </button>
+
+                        <button class="flavor-btn">
+                            Blue Raspberry
+                        </button>
+
+                    </div>
+
+
+
+
+
+                    <!-- WEIGHT -->
+
+                    <div class="weight-box">
+
+                        <span>450G</span>
+
+                    </div>
+
+
+
+
+
+                    <!-- PRICE -->
+
+                    <div class="product-price-area">
+
+                        <div class="new-price">
+                            Rs 1600
+                        </div>
+
+                        <div class="old-price">
+                            Rs 2600
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <!-- ACTION BUTTONS -->
+
+                    <div class="product-buttons">
+
+                        <button class="primary-btn add-cart-btn">
+
+                            Add To Cart
+
+                        </button>
+
+                        <button class="secondary-btn quick-view-btn">
+
+                            Quick View
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <!-- UPCOMING PRODUCT -->
+
+            <div class="product-card upcoming-card" data-category="upcoming">
+
+                <div class="upcoming-badge">
+                    UPCOMING
+                </div>
+
+                <div class="upcoming-content">
+
+                    <h2>
+                        MORE PRODUCTS COMING SOON
+                    </h2>
+
+                    <p>
+
+                        Protein • Creatine • Vitamins • Accessories
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BANNER -->
+<section class="product-banner">
+  <img src="hero-banner.png.png" alt="BRAINRUSH Banner" />
+</section>
+
+<!-- ========================= -->
+<!-- PRODUCT MODAL -->
+<!-- ========================= -->
+
+<div class="product-modal" id="productModal">
+
+    <div class="modal-content">
+
+        <button
+  class="close-modal"
+  id="closeCheckoutModal"
+>
+
+  ×
+
+</button>
+
+        <div class="modal-grid">
+<div class="modal-image">
+
+    <img
+      src="assets/PRODUCT 1.jpg"
+      alt="product"
+    >
+
+</div>
+
+
+
+<div class="modal-details">
+
+    <div class="product-badge">
+        BESTSELLER
+    </div>
+
+    <h2>
+        BRAINRUSH PRE-WORKOUT
+    </h2>
+
+    <p class="modal-description">
+
+        Premium pre-workout supplement engineered
+        for explosive performance, tunnel focus
+        and maximum intensity.
+
+    </p>
+
+
+
+    <div class="modal-section">
+
+        <h4>
+            Choose Flavor
+        </h4>
+
+        <div class="flavor-options">
+
+            <button class="flavor-btn active-flavor">
+                Mix Fruit
+            </button>
+
+            <button class="flavor-btn">
+                Blue Raspberry
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="modal-section">
+
+        <h4>
+            Quantity
+        </h4>
+
+        <div class="quantity-box">
+
+            <button
+              class="qty-btn"
+              data-action="minus"
+            >
+
+              −
+
+            </button>
+
+            <span class="qty-number">
+
+              1
+
+            </span>
+
+            <button
+              class="qty-btn"
+              data-action="plus"
+            >
+
+              +
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="product-price-area">
+
+        <div class="new-price">
+            Rs 1600
+        </div>
+
+        <div class="old-price">
+            Rs 2600
+        </div>
+
+    </div>
+
+
+
+    <div class="modal-buttons">
+
+        <button class="primary-btn add-cart-btn">
+
+            Add To Cart
+
+        </button>
+
+        <button
+  class="secondary-btn"
+  id="whatsappOrderBtn"
+>
+
+  WhatsApp Order
+
+</button>
+    </div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <div class="footer-logo">
+
+              
+
+                <span>BRAINRUSH</span>
+
+            </div>
+
+            <p class="footer-text">
+
+                Dominate Every Rep.
+
+            </p>
+
+        </div>
+
+
+
+
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="products.html">Products</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+
+
+
+
+        <div>
+
+            <h3>Contact</h3>
+
+            <ul>
+
+                <li>Jalandhar</li>
+
+                <li>24/7 Support</li>
+
+                <li>
+                    Zenoxinternational12@gmail.com
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+
+
+        <div>
+
+            <h3>Social</h3>
+
+            <ul>
+
+                <li>
+
+                    <a href="https://www.instagram.com/brainrush.1?igsh=MXN3ODJwemc0ODV6bg==">
+
+                        Instagram
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="https://wa.me/917814296292">
+
+                        WhatsApp
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2025 BRAINRUSH. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+
+<!-- JS -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+ 

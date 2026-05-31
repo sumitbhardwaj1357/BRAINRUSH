@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>BRAINRUSH Admin Panel</title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="admin.css" />
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- ========================= -->
+    <!-- ADMIN PANEL -->
+    <!-- ========================= -->
+
+    <section class="admin-panel" id="adminPanel">
+      <!-- ========================= -->
+      <!-- SIDEBAR -->
+      <!-- ========================= -->
+
+      <aside class="sidebar">
+        <div class="sidebar-top">
+          <img src="logo.png.jpeg" alt="logo" />
+
+          <h2>BRAINRUSH</h2>
+        </div>
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+          <button class="nav-btn active-admin-tab" data-tab="dashboardTab">
+            Dashboard
+          </button>
+
+          <button class="nav-btn" data-tab="ordersTab">Orders</button>
+
+          <button class="nav-btn" data-tab="productsTab">Products</button>
+        </nav>
+
+        <!-- LOGOUT -->
+
+        <button class="logout-btn" id="logoutBtn">Logout</button>
+      </aside>
+
+      <!-- ========================= -->
+      <!-- MAIN CONTENT -->
+      <!-- ========================= -->
+
+      <main class="admin-main">
+        <!-- ========================= -->
+        <!-- DASHBOARD TAB -->
+        <!-- ========================= -->
+
+        <div class="admin-tab active-tab" id="dashboardTab">
+          <div class="admin-header">
+            <h1>Dashboard</h1>
+
+            <p>Welcome back, Admin.</p>
+          </div>
+
+          <!-- STATS GRID -->
+
+          <div class="stats-grid">
+            <!-- CARD -->
+
+            <div class="stat-card">
+              <h3>Total Orders</h3>
+
+              <h2 id="totalOrders">0</h2>
+            </div>
+
+            <!-- CARD -->
+
+            <div class="stat-card">
+              <h3>Total Revenue</h3>
+
+              <h2 id="totalRevenue">Rs 0</h2>
+            </div>
+
+            <!-- CARD -->
+
+            <div class="stat-card">
+              <h3>WhatsApp Orders</h3>
+
+              <h2 id="whatsappOrders">0</h2>
+            </div>
+
+            <!-- CARD -->
+
+            <div class="stat-card">
+              <h3>Email Orders</h3>
+
+              <h2 id="emailOrders">0</h2>
+            </div>
+
+            <!-- CARD -->
+
+            <div class="stat-card">
+              <h3>Products Live</h3>
+
+              <h2 id="productsLive">0</h2>
+            </div>
+
+            <!-- CARD -->
+
+            <div class="stat-card">
+              <h3>Today's Orders</h3>
+
+              <h2 id="todayOrders">0</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================= -->
+        <!-- ORDERS TAB -->
+        <!-- ========================= -->
+
+        <div class="admin-tab" id="ordersTab">
+          <div class="admin-header">
+            <h1>Orders</h1>
+
+            <p>Manage customer orders.</p>
+          </div>
+
+          <!-- TABLE -->
+
+          <div class="orders-table-wrapper">
+            <table class="orders-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+
+                  <th>Customer</th>
+
+                  <th>Phone</th>
+
+                  <th>City</th>
+
+                  <th>Items</th>
+
+                  <th>Total</th>
+
+                  <th>Date</th>
+
+                  <th>Status</th>
+
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody id="ordersTableBody">
+                <!-- SAMPLE ROW -->
+
+                <tr>
+                  <td>#BR1024</td>
+
+                  <td>Rahul Sharma</td>
+
+                  <td>9876543210</td>
+
+                  <td>Jalandhar</td>
+
+                  <td>Pre Workout</td>
+
+                  <td>Rs 1600</td>
+
+                  <td>12 May 2026</td>
+
+                  <td>
+                    <select class="status-select">
+                      <option>Received</option>
+
+                      <option selected>Processing</option>
+
+                      <option>Shipped</option>
+
+                      <option>Delivered</option>
+
+                      <option>Delayed</option>
+                    </select>
+                  </td>
+
+                  <td>WhatsApp</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- CLEAR BUTTON -->
+
+        <button class="clear-orders-btn" id="clearAllOrders">
+  Clear All Orders
+</button>
+
+        <!-- ========================= -->
+        <!-- PRODUCTS TAB -->
+        <!-- ========================= -->
+
+        <div class="admin-tab" id="productsTab">
+          <div class="admin-header">
+            <h1>Products</h1>
+
+            <p>Add, edit and manage products.</p>
+          </div>
+
+          <!-- ADD BUTTON -->
+
+          <button class="add-product-btn" id="openProductModal">
+            + Add New Product
+          </button>
+
+          <!-- PRODUCTS GRID -->
+
+          <div class="admin-products-grid">
+            <!-- SAMPLE CARD -->
+
+            <div class="admin-product-card">
+              <img src="hero-banner_png.png" alt="product" />
+
+              <h3>BRAINRUSH PRE-WORKOUT</h3>
+
+              <p>Rs 1600</p>
+
+              <!-- ACTIONS -->
+
+              <div class="admin-product-actions">
+                <button class="edit-btn">Edit</button>
+
+                <button class="delete-btn">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <!-- ========================= -->
+    <!-- PRODUCT MODAL -->
+    <!-- ========================= -->
+
+    <div class="product-modal hidden" id="productModal">
+      <div class="modal-box">
+        <!-- CLOSE -->
+
+        <button class="close-modal" id="closeProductModal">×</button>
+
+        <h2>Add Product</h2>
+
+        <!-- FORM -->
+
+        <form class="product-form">
+          <!-- PRODUCT NAME -->
+
+          <div class="input-group">
+            <label> Product Name </label>
+
+            <input type="text" placeholder="Enter product name" />
+          </div>
+
+          <!-- PRICE -->
+
+          <div class="input-group">
+            <label> Price </label>
+
+            <input type="number" placeholder="Enter price" />
+          </div>
+
+          <!-- OLD PRICE -->
+
+          <div class="input-group">
+            <label> Original Price </label>
+
+            <input type="number" placeholder="Enter original price" />
+          </div>
+
+          <!-- CATEGORY -->
+
+          <div class="input-group">
+            <label> Category </label>
+
+            <select>
+              <option>Protein</option>
+
+              <option selected>Pre-Workout</option>
+
+              <option>Creatine</option>
+
+              <option>Vitamins</option>
+            </select>
+          </div>
+
+          <!-- BADGE -->
+
+          <div class="input-group">
+            <label> Badge </label>
+
+            <select>
+              <option>NEW</option>
+
+              <option selected>BESTSELLER</option>
+
+              <option>HOT</option>
+
+              <option>SALE</option>
+            </select>
+          </div>
+
+          <!-- FLAVORS -->
+
+          <div class="input-group">
+            <label> Flavors </label>
+
+            <input type="text" placeholder="Mix Fruit, Blue Raspberry" />
+          </div>
+
+          <!-- DESCRIPTION -->
+
+          <div class="input-group">
+            <label> Description </label>
+
+            <textarea rows="5" placeholder="Product description"></textarea>
+          </div>
+
+          <!-- IMAGE -->
+
+          <div class="input-group">
+            <label> Upload Product Image </label>
+
+            <input type="file" />
+          </div>
+
+          <!-- BUTTON -->
+
+          <button type="submit" class="save-product-btn">Save Product</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- JS -->
+
+    <script src="admin.js"></script>
+  </body>
+</html>

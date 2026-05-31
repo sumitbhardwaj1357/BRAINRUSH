@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Contact | BRAINRUSH</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- ========================= -->
+    <!-- NAVBAR -->
+    <!-- ========================= -->
+
+    <header class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="logo">
+          <img src="logo.png.jpeg" alt="logo" />
+
+          <span></span>
+        </a>
+
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+
+          <a href="products.html">Products</a>
+
+          <a href="about.html">About</a>
+
+          <a href="orders.html">My Orders</a>
+
+          <a href="contact.html" class="active-link">Contact</a>
+        </nav>
+
+        <button class="cart-btn" id="cartBtn">
+          Cart
+
+          <span id="cartCount">0</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ========================= -->
+    <!-- HERO -->
+    <!-- ========================= -->
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="hero-tag">CONTACT BRAINRUSH</p>
+
+        <h1>LET'S CONNECT</h1>
+
+        <p class="page-subtext">
+          Need support, supplement guidance or order help? We’re available 24/7
+          for you.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- CONTACT SECTION -->
+    <!-- ========================= -->
+
+    <section class="contact-section">
+      <div class="container contact-grid">
+        <!-- LEFT -->
+
+        <div class="contact-info">
+          <p class="section-mini-title">GET IN TOUCH</p>
+
+          <h2>We’re Always Ready To Help</h2>
+
+          <p class="contact-description">
+            Contact BRAINRUSH anytime regarding orders, support, collaborations
+            or supplement guidance.
+          </p>
+
+          <!-- CARD -->
+
+          <div class="contact-box">
+            <div class="contact-icon">⚲</div>
+
+            <div>
+              <h3>Location</h3>
+
+              <p>Jalandhar, Punjab</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+
+          <div class="contact-box">
+            <div class="contact-icon">✉️</div>
+
+            <div>
+              <h3>Email Support</h3>
+
+              <p>Zenoxinternational12@gmail.com</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+
+          <div class="contact-box">
+            <div class="contact-icon">✝</div>
+
+            <div>
+              <h3>WhatsApp</h3>
+
+              <p>+91 7888309962</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+
+          <div class="contact-box">
+            <div class="contact-icon">🏠︎</div>
+
+            <div>
+              <h3>Working Hours</h3>
+
+              <p>Open 24/7</p>
+            </div>
+          </div>
+
+          <!-- SOCIAL -->
+
+          <div class="contact-socials">
+            <a
+              href="https://www.instagram.com/brainrush.1?igsh=MXN3ODJwemc0ODV6bg=="
+              class="primary-btn"
+            >
+              Instagram
+            </a>
+
+            <a href="https://wa.me/917888309962" class="secondary-btn">
+              WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="contact-form-box">
+          <form class="contact-form" id="contactForm">
+            <div class="input-group">
+              <label>Full Name</label>
+
+              <input type="text" id="contactName" placeholder="Enter your full name" />
+            </div>
+
+            <div class="input-group">
+              <label>Email Address</label>
+
+              <input type="email" id="contactEmail" placeholder="Enter your email" />
+            </div>
+
+            <div class="input-group">
+              <label>Phone Number</label>
+
+              <input type="tel" id="contactPhone" placeholder="Enter your phone number" />
+            </div>
+
+            <div class="input-group">
+              <label>Subject</label>
+
+              <input type="text" id="contactSubject" placeholder="Order Support / Inquiry" />
+            </div>
+
+            <div class="input-group">
+              <label>Your Message</label>
+
+              <textarea id="contactMessage" rows="6" placeholder="Write your message here..."></textarea>
+            </div>
+
+            <button type="submit" class="primary-btn full-btn">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- FAQ -->
+    <!-- ========================= -->
+
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-title">
+          <p>FAQ</p>
+
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-item">
+            <button class="faq-question">How long does delivery take?</button>
+
+            <div class="faq-answer">
+              <p>Most orders are delivered within 3–7 business days.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Do you offer Cash On Delivery?</button>
+
+            <div class="faq-answer">
+              <p>Yes, COD is available in selected locations.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Is BRAINRUSH beginner friendly?
+            </button>
+
+            <div class="faq-answer">
+              <p>Yes, follow the recommended serving instructions carefully.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- CTA -->
+    <!-- ========================= -->
+
+    <section class="cta-section">
+      <div class="container cta-container">
+        <h2>DOMINATE YOUR NEXT WORKOUT</h2>
+
+        <p>Fuel your performance with premium BRAINRUSH supplements.</p>
+
+        <a href="products.html" class="primary-btn"> Shop Supplements </a>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-logo">
+            <span>BRAINRUSH</span>
+          </div>
+
+          <p class="footer-text">Dominate Every Rep.</p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+
+          <ul>
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="products.html">Products</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+
+          <ul>
+            <li>Jalandhar</li>
+
+            <li>24/7 Support</li>
+
+            <li>Zenoxinternational12@gmail.com</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Social</h3>
+
+          <ul>
+            <li>
+              <a
+                href="https://www.instagram.com/brainrush.1?igsh=MXN3ODJwemc0ODV6bg=="
+              >
+                Instagram
+              </a>
+            </li>
+
+            <li>
+              <a href="https://wa.me/917888309962"> WhatsApp </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 BRAINRUSH. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
